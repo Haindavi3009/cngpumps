@@ -1,0 +1,121 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 180 33% 98%;
+    --foreground: 180 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 180 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 180 10% 10%;
+
+    --primary: 180 100% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 9% 92%;
+    --secondary-foreground: 180 10% 20%;
+
+    --muted: 180 9% 92%;
+    --muted-foreground: 180 5% 45%;
+
+    --accent: 36 100% 50%;
+    --accent-foreground: 36 100% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 180 10% 90%;
+    --input: 180 10% 90%;
+    --ring: 180 100% 34%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 180 10% 10%;
+    --foreground: 180 5% 90%;
+
+    --card: 180 10% 12%;
+    --card-foreground: 180 5% 90%;
+
+    --popover: 180 10% 12%;
+    --popover-foreground: 180 5% 90%;
+
+    --primary: 180 100% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 10% 18%;
+    --secondary-foreground: 180 5% 90%;
+
+    --muted: 180 10% 18%;
+    --muted-foreground: 180 5% 60%;
+
+    --accent: 36 100% 50%;
+    --accent-foreground: 36 100% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 180 10% 20%;
+    --input: 180 10% 20%;
+    --ring: 180 100% 34%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  /* Map container styles */
+  .map-container {
+    @apply h-full w-full overflow-hidden;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border border-white/10 shadow-lg;
+  }
+  
+  .station-marker {
+    @apply w-10 h-10 bg-cng-500 text-white rounded-full flex items-center justify-center cursor-pointer transition-transform hover:scale-110;
+  }
+  
+  .station-marker-available {
+    @apply bg-green-500;
+  }
+  
+  .station-marker-busy {
+    @apply bg-yellow-500;
+  }
+  
+  .station-marker-unavailable {
+    @apply bg-red-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
